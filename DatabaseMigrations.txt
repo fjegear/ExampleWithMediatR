@@ -1,0 +1,15 @@
+#Inside the Data project which contains EF DbContext and model entities
+dotnet tool install --global dotnet-ef
+dotnet tool update --global dotnet-ef
+dotnet add package Microsoft.EntifyFrameworkCore.Design
+
+#Test installation of Migration tools
+dotnet ef
+
+#Create migration for first execution
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+#Update model and database
+dotnet ef migrations add AddBlogCreatedTimestamp
+dotnet ef database update
